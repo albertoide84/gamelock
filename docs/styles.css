@@ -1,9 +1,15 @@
+body{
+    font-family: sans-serif;
+}
 button.verify_button {
     width:100%;
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 4;
     font-size: 3rem;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background-color: red;
 }
 
 ol {
@@ -11,11 +17,15 @@ ol {
     list-style: none;
     overflow-y: hidden;
     line-height: 1;
-    font-size: 4em;
+    font-size: 8em;
     border: solid thin black;
     text-align: center;
     padding:20px;
+    padding-left:0.7em;
+    padding-right:0.7em;
     margin: 1px;
+    background-color: slategrey;
+    color: limegreen;
 }
 
 ol>li{
@@ -54,8 +64,18 @@ ol>li{
     grid-column-start: 1;
 }
 
-.up::content {
-content: "&#x2b99;";
+.up {
+    background-image: url(up.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+.down {
+    background-image: url(down.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 
 #contenedor {
@@ -80,24 +100,26 @@ content: "&#x2b99;";
 }
 
 .revelado {
-
+    color: limegreen;
     animation-name: bounce;
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-delay: 0s;
-
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 @keyframes bounce {
     0% {
-        background-color: tomato;
+        background-color: black;
         margin-top: -60px;
     }
     100% {
         margin-top: 20px;
-        background-color: tomato;
+        background-color: black;
     }
 }
+
 

@@ -11,11 +11,12 @@
                 var two_list_value=document.getElementById("two_list")["value"];
                 var three_list_value=document.getElementById("three_list")["value"];
 
-
                 var isCorrect=(3===one_list_value) && (2===two_list_value) && (1===three_list_value);
                 console.log(isCorrect);
                 if(isCorrect){
                     document.getElementById("respuesta").className="revelado";
+                } else {
+                    alert("¡NO, NO, NO, ESA NO ES LA RESPUESTA CORRECTA!")
                 }
             }
             function move(list_id, increment){
@@ -40,7 +41,7 @@
         <div class="grid_container">
 
             <div>
-                <button class="move up" onclick='move("one_list",1);'>&#x2b99;</button>
+                <button class="move up" onclick='move("one_list",1);'>&nbsp;</button>
                 <ol id="one_list">
                     <li id="one_list_first">0</li>
                     <li>1</li>
@@ -53,10 +54,10 @@
                     <li>8</li>
                     <li>9</li>
                 </ol>
-                <button class="move down" onclick='move("one_list",-1);'>&#x2b9b;</button>
+                <button class="move down" onclick='move("one_list",-1);'>&nbsp;</button>
             </div>
             <div>
-                <button class="move up" onclick='move("two_list",1);'>&#x2b99;</button>
+                <button class="move up" onclick='move("two_list",1);'>&nbsp;</button>
                 <ol id="two_list">
                     <li id="two_list_first">0</li>
                     <li>1</li>
@@ -69,10 +70,10 @@
                     <li>8</li>
                     <li>9</li>
                 </ol>
-                <button class="move down" onclick='move("two_list",-1);'>&#x2b9b;</button>
+                <button class="move down" onclick='move("two_list",-1);'>&nbsp;</button>
             </div>
             <div>
-                <button class="move up" onclick='move("three_list",1);'>&#x2b99;</button>
+                <button class="move up" onclick='move("three_list",1);'>&nbsp;</button>
                 <ol id="three_list">
                     <li id="three_list_first">0</li>
                     <li>1</li>
@@ -85,7 +86,7 @@
                     <li>8</li>
                     <li>9</li>
                 </ol>
-                <button class="move down" onclick='move("three_list",-1);'>&#x2b9b;</button>
+                <button class="move down" onclick='move("three_list",-1);'>&nbsp;</button>
             </div>
             <button class="verify_button" onclick="verify();">Compruébalo!</button>
             <div id="contenedor" >
