@@ -1,14 +1,9 @@
-input {
-    padding: 10px 10px 10px 10px;
-    text-align: center;
-}
-
 button.verify_button {
     width:100%;
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 4;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 ol {
@@ -41,6 +36,22 @@ ol>li{
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: chocolate;
+    padding-left: 246px;
+    padding-right: 20px;
+    padding-top: 4em;
+    border: solid thick black;
+    background-image: url(villain.png);
+    background-repeat: no-repeat;
+}
+
+.sidebar {
+
+    width:100%;
+    height:100%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
 }
 
 .up::content {
@@ -60,6 +71,7 @@ content: "&#x2b99;";
 #respuesta{
     width: 100%;
     font-size: 3rem;
+    text-align: center;
 }
 
 .norevelado {
@@ -88,3 +100,4 @@ content: "&#x2b99;";
         background-color: tomato;
     }
 }
+
