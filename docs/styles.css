@@ -53,6 +53,7 @@ ol>li{
     border: solid thick black;
     background-image: url(villain.png);
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 .sidebar {
