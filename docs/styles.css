@@ -1,16 +1,37 @@
 input {
-    font-size: 3rem;
     padding: 10px 10px 10px 10px;
     text-align: center;
 }
 
-button {
+button.verify_button {
     width:100%;
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 4;
     font-size: 2rem;
 }
+
+ol {
+    height: 1em;
+    list-style: none;
+    overflow-y: hidden;
+    line-height: 1;
+    font-size: 4em;
+    border: solid thin black;
+    text-align: center;
+    padding:20px;
+    margin: 1px;
+}
+
+ol>li{
+    padding-bottom: 1em;
+}
+
+.move{
+    width: 100%;
+    font-size: 2em;
+}
+
 
 .grid_container {
     width: 100%;
@@ -20,6 +41,10 @@ button {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.up::content {
+content: "&#x2b99;";
 }
 
 #contenedor {

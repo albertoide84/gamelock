@@ -6,27 +6,91 @@
         <title></title>
         <script>
             function verify(){
-                var one=document.getElementById("one").value;
-                var two=document.getElementById("two").value;
-                var three=document.getElementById("three").value;
-                var isCorrect=("3"===one) && ("2"===two) && ("1"===three);
+
+                var one_list_value=document.getElementById("one_list")["value"];
+                var two_list_value=document.getElementById("two_list")["value"];
+                var three_list_value=document.getElementById("three_list")["value"];
+
+
+                var isCorrect=(3===one_list_value) && (2===two_list_value) && (1===three_list_value);
                 console.log(isCorrect);
                 if(isCorrect){
                     document.getElementById("respuesta").className="revelado";
                 }
             }
+            function move(list_id, increment){
+
+                var one_list=document.getElementById(list_id);
+                var one_list_first=document.getElementById(list_id+"_first");
+                if (one_list["value"] == undefined) {
+                    one_list["value"]=0;
+                }
+                if(increment>0){
+                    one_list["value"]=(one_list["value"]+increment)%10;
+                } else {
+                    one_list["value"]=(one_list["value"]+(10+increment))%10;
+                }
+                one_list_first.setAttribute("style", "margin-top:"+(-2*one_list["value"])+"em");
+
+            }
         </script>
     </head>
     <body>
+
         <div class="grid_container">
-            <input id="one" type="number" min="0" max="9"/>
-            <input id="two" type="number" min="0" max="9"  />
-            <input id="three" type="number" min="0" max="9" />
-            <button onclick="verify();">Compruébalo!</button>
+            <div>
+                <button class="move up" onclick='move("one_list",1);'>&#x2b99;</button>
+                <ol id="one_list">
+                    <li id="one_list_first">0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ol>
+                <button class="move down" onclick='move("one_list",-1);'>&#x2b9b;</button>
+            </div>
+            <div>
+                <button class="move up" onclick='move("two_list",1);'>&#x2b99;</button>
+                <ol id="two_list">
+                    <li id="two_list_first">0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ol>
+                <button class="move down" onclick='move("two_list",-1);'>&#x2b9b;</button>
+            </div>
+            <div>
+                <button class="move up" onclick='move("three_list",1);'>&#x2b99;</button>
+                <ol id="three_list">
+                    <li id="three_list_first">0</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                </ol>
+                <button class="move down" onclick='move("three_list",-1);'>&#x2b9b;</button>
+            </div>
+            <button class="verify_button" onclick="verify();">Compruébalo!</button>
             <div id="contenedor" >
                 <div id="respuesta" class="norevelado">Respuesta</div>
             </div>
         </div>
-        
+
     </body>
 </html>
